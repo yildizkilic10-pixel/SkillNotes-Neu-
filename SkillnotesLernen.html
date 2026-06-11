@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="de"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;SkillNotes&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="SkillNotes ist eine Community-App für Studierende mit Datenbank, eigenen Lernmaterialien, Skills, Bewertungen, Profilen und Chatraum." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>:root{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--bg:#fff9f3;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--surface:#ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--text:#1f2937;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--muted:#6b7280;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--primary:#f97316;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--primary-dark:#ea580c;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--accent:#0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--line:#fde2c8;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--shadow:0 20px 50px rgba(249,115,22,.14);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--radius:24px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>*{box-sizing:border-box}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>html{scroll-behavior:smooth}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body{margin:0;font-family:'Inter',sans-serif;color:var(--text);background:radial-gradient(circle at top left,#fff0e4 0,#fff9f3 35%,#ffffff 100%);line-height:1.6}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>a{text-decoration:none;color:inherit}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.container{width:min(1180px,calc(100% - 32px));margin:0 auto}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.nav{position:sticky;top:0;z-index:30;background:rgba(255,249,243,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(253,226,200,.9)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.08rem}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.brand-mark{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--primary),#fb923c);color:#fff;display:grid;place-items:center;box-shadow:var(--shadow)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.nav-links{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-weight:600}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.nav-links a:hover{color:var(--primary-dark)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.profile-link{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);font-weight:800;box-shadow:0 10px 24px rgba(0,0,0,.04)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.profile-dot{width:10px;height:10px;border-radius:50%;background:var(--primary)}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:800;border:1px solid transparent;transition:.2s ease;cursor:pointer;font:inherit}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-primary{background:var(--primary);color:#fff;box-shadow:var(--shadow)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-secondary{background:#fff;color:var(--text);border-color:var(--line)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-secondary:hover{border-color:var(--primary);color:var(--primary-dark)}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero{padding:56px 0 28px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--primary-dark);font-weight:800;font-size:.92rem}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>h1{font-size:clamp(2.4rem,5vw,4.8rem);line-height:1.02;margin:18px 0 16px;letter-spacing:-.04em}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.lead{font-size:1.1rem;color:var(--muted);max-width:58ch}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.stat,.card,.feature,.panel,.material-item,.chat-list,.chat-window{background:rgba(255,255,255,.92);border:1px solid rgba(253,226,200,.9);box-shadow:var(--shadow);border-radius:var(--radius)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.stat{padding:18px;text-align:center}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.stat strong{display:block;font-size:1.5rem}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.visual{position:relative;min-height:520px;display:grid;place-items:center}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.blob{position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(249,115,22,.96) 0 38%,rgba(249,115,22,.90) 39% 100%);border-radius:40px;clip-path:polygon(0 0,100% 0,100% 100%,18% 100%,0 76%)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.mock{position:relative;width:min(100%,430px);padding:22px;border-radius:30px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(10px);color:#fff;box-shadow:0 30px 80px rgba(0,0,0,.12)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.mock h3{margin:0 0 10px;font-size:1.5rem}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.chip-row{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.chip{padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.18);font-size:.92rem}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>section{padding:30px 0}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.section-title{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.section-title h2{margin:0;font-size:clamp(1.6rem,3vw,2.5rem)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.section-title p{margin:0;color:var(--muted);max-width:62ch}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.feature,.card,.panel,.material-item,.chat-list,.chat-window{padding:22px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.icon{width:44px;height:44px;border-radius:14px;background:rgba(249,115,22,.12);display:grid;place-items:center;font-size:1.2rem;margin-bottom:14px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.feature h3,.card h3,.panel h3,.material-item h4{margin:0 0 10px;font-size:1.2rem}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.feature p,.card p,.panel p,.muted{color:var(--muted)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.list{margin:12px 0 0;padding:0;list-style:none}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.list li{padding:10px 0;border-top:1px solid #f6e4d4}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.pill{display:inline-block;padding:8px 12px;border-radius:999px;background:#fef3e8;color:#9a3412;font-weight:800;font-size:.9rem}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.split{display:grid;grid-template-columns:.95fr 1.05fr;gap:18px;align-items:start}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.table{width:100%;border-collapse:collapse;margin-top:8px;overflow:hidden;border-radius:18px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.table th,.table td{padding:12px 14px;border-bottom:1px solid #f3e3d5;text-align:left}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.table th{background:#fff7ef}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.search-wrap{display:flex;gap:12px;flex-wrap:wrap;align-items:center}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.search-input{flex:1;min-width:240px;padding:14px 16px;border-radius:16px;border:1px solid var(--line);font:inherit;background:#fff}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.material-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.material-item button{margin-top:10px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>#selectedMaterial{border:2px solid var(--primary);background:#fff7ef}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.chat{display:grid;grid-template-columns:280px 1fr;gap:18px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.chat-contact{padding:14px;border-radius:16px;background:#fff7ef;margin-top:10px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.chat-window{display:flex;flex-direction:column;min-height:420px;padding:0;overflow:hidden}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.chat-header{padding:18px 20px;border-bottom:1px solid var(--line);font-weight:800;background:#fff7ef}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.messages{padding:18px 20px;display:grid;gap:12px;flex:1}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.msg{max-width:72%;padding:14px 16px;border-radius:18px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.msg.me{justify-self:end;background:var(--primary);color:#fff;border-bottom-right-radius:6px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.msg.other{background:#f8fafc;border:1px solid #e5e7eb;border-bottom-left-radius:6px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.chat-input{display:flex;gap:10px;padding:16px 20px;border-top:1px solid var(--line)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.chat-input input{flex:1;padding:14px 16px;border-radius:14px;border:1px solid var(--line);font:inherit}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.profile-card{padding:24px;border-radius:28px;background:linear-gradient(135deg,#fff,#fff7ef);border:1px solid var(--line);box-shadow:var(--shadow)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.footer{padding:26px 0 40px;text-align:center;color:var(--muted)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 900px){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.hero-grid,.grid-2,.grid-3,.split,.chat,.material-list,.profile-grid{grid-template-columns:1fr}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.visual{min-height:380px}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.nav-links{display:none}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.stats{grid-template-columns:1fr}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.section-title{flex-direction:column;align-items:flex-start}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;header class="nav"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container nav-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a class="brand" href="#start"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="brand-mark"&gt;🎓&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;SkillNotes&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;nav class="nav-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#funktionen"&gt;Funktionen&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#materialien"&gt;Materialien&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#skills"&gt;Skills&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#chatraum"&gt;Chatraum&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#belohnungen"&gt;Belohnungen&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a class="profile-link" href="#profil"&gt;&lt;span class="profile-dot"&gt;&lt;/span&gt;Mein Profil&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;main&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="hero" id="start"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="container hero-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="eyebrow"&gt;Community-App für Studierende&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h1&gt;Lernen teilen.&lt;br&gt;Skills tauschen.&lt;br&gt;Eigene Inhalte sichtbar machen.&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="lead"&gt;SkillNotes verbindet eine Datenbank, eigene Lernmaterialien, Skills, Bewertungen, Profile und einen Chatraum in einer Plattform für Studierende.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="hero-actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a class="btn btn-primary" href="#funktionen"&gt;Funktionen ansehen&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a class="btn btn-secondary" href="#materialien"&gt;Materialien suchen&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="stats"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="stat"&gt;&lt;strong&gt;+20&lt;/strong&gt;&lt;span&gt;Lernmaterial hochladen&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="stat"&gt;&lt;strong&gt;4,9&lt;/strong&gt;&lt;span&gt;Bewertungen im Profil&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="stat"&gt;&lt;strong&gt;1000&lt;/strong&gt;&lt;span&gt;Punkte bis Premium&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="visual"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="blob"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="mock"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Max Mustermann&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Wirtschaftsinformatik · Semester 4&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="chip-row"&gt;&lt;span class="chip"&gt;320 Punkte&lt;/span&gt;&lt;span class="chip"&gt;Top Contributor&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Meine Skills:&lt;/strong&gt; Excel, Statistik&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Meine Lernmaterialien:&lt;/strong&gt; Statistik Zusammenfassung&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Meine Aktivität:&lt;/strong&gt; 15 Lernmaterialien hochgeladen&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="funktionen"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;Funktionen&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Der SkillNotes Assistant wurde entfernt. Stattdessen steht die Datenbank im Mittelpunkt.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;article class="feature"&gt;&lt;div class="icon"&gt;🗄️&lt;/div&gt;&lt;h3&gt;Datenbank&lt;/h3&gt;&lt;p&gt;Die Datenbank sammelt Lernmaterialien, Profile, Skills, Bewertungen und Chatkontakte an einem Ort.&lt;/p&gt;&lt;/article&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;article class="feature"&gt;&lt;div class="icon"&gt;📚&lt;/div&gt;&lt;h3&gt;Eigene Inhalte&lt;/h3&gt;&lt;p&gt;Studierende teilen nur selbst erstellte Inhalte wie Zusammenfassungen, Lernkarten, Checklisten und Übungsfragen.&lt;/p&gt;&lt;/article&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;article class="feature"&gt;&lt;div class="icon"&gt;💬&lt;/div&gt;&lt;h3&gt;Chatraum&lt;/h3&gt;&lt;p&gt;Im Chatraum können Studierende Fragen stellen, Hilfe anbieten und direkt miteinander schreiben.&lt;/p&gt;&lt;/article&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;article class="feature"&gt;&lt;div class="icon"&gt;⭐&lt;/div&gt;&lt;h3&gt;Bewertungen&lt;/h3&gt;&lt;p&gt;Gute Lernmaterialien und hilfreiche Antworten werden bewertet und im Profil sichtbar gemacht.&lt;/p&gt;&lt;/article&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="materialien"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="container split"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="section-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Lernmaterialien&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Mit der Suchleiste kannst du Materialien filtern. Beim Klick auf „Öffnen“ erscheint ein Beispielinhalt.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="search-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="filterInput" class="search-input" type="search" placeholder="Suche z. B. Zusammenfassung, Excel, Python..." aria-label="Lernmaterial filtern"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;button class="btn btn-primary" type="button" onclick="filterMaterials()"&gt;Filtern&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="material-list" id="materialList"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="material-item" data-keywords="zusammenfassung statistik wirtschaft formeln"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Zusammenfassung: Statistik&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Eigene Zusammenfassung mit Mittelwert, Median, Varianz und Beispielaufgaben.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn btn-secondary" type="button" onclick="showMaterial('Zusammenfassung: Statistik', 'Beispiel: Der Mittelwert wird berechnet, indem alle Werte addiert und durch die Anzahl der Werte geteilt werden. Diese Zusammenfassung enthält Formeln, Erklärungen und kurze Übungsaufgaben.')"&gt;Öffnen&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="material-item" data-keywords="lernkarten excel funktionen sverweis wenn pivot"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Lernkarten: Excel-Funktionen&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Karteikarten zu SVERWEIS, WENN-Funktion und Pivot-Tabellen.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn btn-secondary" type="button" onclick="showMaterial('Lernkarten: Excel', 'Beispielkarte: Die WENN-Funktion prüft eine Bedingung und gibt je nach Ergebnis einen Wert aus. Beispiel: =WENN(A1&amp;gt;50;&amp;quot;Bestanden&amp;quot;;&amp;quot;Nicht bestanden&amp;quot;).')"&gt;Öffnen&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="material-item" data-keywords="checkliste prüfung vorbereitung lernen"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Checkliste: Prüfungsvorbereitung&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Schritte für Lernplan, Wiederholung, Übungsaufgaben und Pausen.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn btn-secondary" type="button" onclick="showMaterial('Checkliste: Prüfungsvorbereitung', 'Beispiel: 1. Themen sammeln. 2. Lernplan erstellen. 3. Jeden Tag wiederholen. 4. Übungsfragen lösen. 5. Einen Tag vor der Prüfung nur wiederholen.')"&gt;Öffnen&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="material-item" data-keywords="übungsfragen python programmierung variablen schleifen"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Übungsfragen: Python&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Eigene Fragen zu Variablen, Bedingungen, Schleifen und Funktionen.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn btn-secondary" type="button" onclick="showMaterial('Übungsfragen: Python', 'Beispiel: Schreibe ein Programm, das prüft, ob eine Zahl gerade oder ungerade ist. Hinweis: Nutze den Modulo-Operator %.')"&gt;Öffnen&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="pill"&gt;Nur eigene Inhalte&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3 style="margin-top:16px"&gt;Erlaubte Beispiele&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul class="list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Zusammenfassungen&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Lernkarten&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Begriffserklärungen&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Checklisten&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Übungsfragen&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="muted" style="margin-top:14px"&gt;Nicht erlaubt: kopierte Skripte, offizielle Vorlesungsfolien oder fremde Materialien ohne Erlaubnis.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="skills"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;Skills und Profile&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Die Datenbank hilft dabei, passende Personen nach Studiengang, Skill und Bewertung zu finden.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card"&gt;&lt;h3&gt;Studiengang&lt;/h3&gt;&lt;p&gt;BWL, Wirtschaftsinformatik, Informatik, Marketing.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card"&gt;&lt;h3&gt;Skill&lt;/h3&gt;&lt;p&gt;Excel, Statistik, Python, Power BI, Marketing und mehr.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card"&gt;&lt;h3&gt;Bewertung&lt;/h3&gt;&lt;p&gt;Alle, 4 Sterne+, 4,5 Sterne+ und 5 Sterne.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="chatraum"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;Chatraum&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Der Chatraum macht direkte Hilfe zwischen Studierenden möglich.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="chat"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;aside class="chat-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Unterhaltungen&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="chat-contact"&gt;&lt;strong&gt;Lisa&lt;/strong&gt;&lt;br&gt;&lt;span class="muted"&gt;Braucht Hilfe in Statistik&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="chat-contact"&gt;&lt;strong&gt;Ali&lt;/strong&gt;&lt;br&gt;&lt;span class="muted"&gt;Bietet Excel-Unterstützung an&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="chat-contact"&gt;&lt;strong&gt;Sarah&lt;/strong&gt;&lt;br&gt;&lt;span class="muted"&gt;Sucht Zusammenfassungen&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/aside&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;section class="chat-window"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="chat-header"&gt;Chat mit Lisa&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="messages" id="messages"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="msg other"&gt;Hast du die Zusammenfassung zur Prüfung gesehen?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="msg me"&gt;Ja, ich habe sie gerade hochgeladen.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="msg other"&gt;Super, die hilft mir echt weiter.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="chat-input"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="chatInput" type="text" placeholder="Nachricht schreiben..."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;button class="btn btn-primary" type="button" onclick="sendMessage()"&gt;Senden&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="belohnungen"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;Punkte und Belohnungen&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Gamification motiviert Beiträge, Hilfsbereitschaft und Community-Aktivität.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Punkteverteilung&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;table class="table"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;&lt;th&gt;Aktion&lt;/th&gt;&lt;th&gt;Punkte&lt;/th&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;&lt;td&gt;Profil erstellen&lt;/td&gt;&lt;td&gt;+10&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;&lt;td&gt;Beitrag veröffentlichen&lt;/td&gt;&lt;td&gt;+20&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;&lt;td&gt;Lernmaterial hochladen&lt;/td&gt;&lt;td&gt;+20&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;&lt;td&gt;Skill anbieten&lt;/td&gt;&lt;td&gt;+20&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;&lt;td&gt;Positive Bewertung erhalten&lt;/td&gt;&lt;td&gt;+10&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;&lt;td&gt;Anderen Nutzern helfen&lt;/td&gt;&lt;td&gt;+30&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Prämien&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;table class="table"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;&lt;th&gt;Punkte&lt;/th&gt;&lt;th&gt;Belohnung&lt;/th&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;5 % Rabatt&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;&lt;td&gt;250&lt;/td&gt;&lt;td&gt;10 % Rabatt&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;&lt;td&gt;500&lt;/td&gt;&lt;td&gt;15 % Rabatt&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;&lt;td&gt;1000&lt;/td&gt;&lt;td&gt;Premium-Monat kostenlos&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="muted" style="margin-top:14px"&gt;Mögliche Partner: Copyshops, Buchhandlungen, Campus-Cafés, Mensa, Hochschulsport und Nachhilfeanbieter.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="profil"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;Mein Profil&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Der Profilbereich ist oben in der Leiste direkt erreichbar.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="profile-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="profile-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Max Mustermann&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="muted"&gt;Wirtschaftsinformatik · Semester 4&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;table class="table"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;&lt;th&gt;Punkte&lt;/th&gt;&lt;td&gt;320&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;&lt;th&gt;Bewertung&lt;/th&gt;&lt;td&gt;4,9 Sterne&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;&lt;th&gt;Skills&lt;/th&gt;&lt;td&gt;Excel, Statistik&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;&lt;th&gt;Aktivität&lt;/th&gt;&lt;td&gt;15 Lernmaterialien hochgeladen&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="profile-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Meine Inhalte&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Statistik Zusammenfassung&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Excel Lernkarten&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Prüfungsvorbereitung Checkliste&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Python Übungsfragen&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer class="footer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>SkillNotes · Community-App für Studierende</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function showMaterial(title, text) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const target = document.getElementById('materialList');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let box = document.getElementById('selectedMaterial');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (!box) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box.id = 'selectedMaterial';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box.className = 'material-item';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box.style.gridColumn = '1 / -1';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>target.prepend(box);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>box.innerHTML = `&lt;h4&gt;${title}&lt;/h4&gt;&lt;p&gt;${text}&lt;/p&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box.scrollIntoView({ behavior: 'smooth', block: 'start' });</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function filterMaterials() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const query = document.getElementById('filterInput').value.toLowerCase().trim();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const items = document.querySelectorAll('#materialList .material-item:not(#selectedMaterial)');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>items.forEach(item =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const text = (item.dataset.keywords || '') + ' ' + item.innerText.toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>item.style.display = text.includes(query) ? '' : 'none';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function sendMessage() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const input = document.getElementById('chatInput');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const text = input.value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (!text) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const msg = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>msg.className = 'msg me';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>msg.textContent = text;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('messages').appendChild(msg);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input.value = '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>msg.scrollIntoView({ behavior: 'smooth' });</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('filterInput').addEventListener('input', filterMaterials);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('chatInput').addEventListener('keydown', function(event){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(event.key === 'Enter') sendMessage();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
